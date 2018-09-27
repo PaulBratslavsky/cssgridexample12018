@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.content-container {
+    height: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 2rem;
+    grid-template-areas: 
+        "main-content main-content main-content"
+        "main-footer main-footer main-footer"
+    ;
+}
+
+
+.main-header {
+    background: blue;
+    color: whitesmoke;
+    grid-area: main-header;
+    position: fixed;
+    height: 4rem;
+    width: 100%;
+    top: 0;
+    left:0;
+}
+
+.header-container {
+    max-width: 1040px;
+    height: 100%;
+    padding: 0 1.2rem;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-header__brand {
+    width: 25%;
+}
+.main-header__nav {
+    display: flex;
+}
+
+.main-header__nav ul {
+    list-style: none;
+}
+
+.mobile-menu-button {
+    display: none;
+}
+
+
+.main-content {
+    padding: 5rem 1rem 1rem 1rem;
+    
+    grid-area: main-content; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(540px, auto)  repeat(3, minmax(350px, auto)) 250px;
+    grid-template-areas: 
+        "section-1 section-1 section-1"
+        "section-2 section-3 section-4"
+        "section-5 section-5 section-8"
+        "section-6 section-6 section-8"
+        "section-7 section-7 section-7"
+
+    ;
+
+    grid-gap: 1rem;
+
+    justify-content: center;
+}
+
+    .main-content__section-1 {
+        background: yellow;
+        color: blanchedalmond;
+        grid-area: section-1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-content__section-1 h1 {
+        font-size: 4rem;
+        color: red;
+        display: block;
+        text-align: center;
+    }
+
+    .main-content__section-2 {
+        background: green;
+        color: whitesmoke;
+        grid-area: section-2;
+    }
+
+    .main-content__section-3 {
+        background: blueviolet;
+        color: whitesmoke;
+        grid-area: section-3;
+    }
+
+    .main-content__section-4 {
+        background: teal;
+        color: whitesmoke;
+        grid-area: section-4;
+    }
+
+    .main-content__section-5 {
+        background: greenyellow;
+        color: whitesmoke;
+        grid-area: section-5;
+    }
+
+    .main-content__section-6 {
+        background: greenyellow;
+        color: whitesmoke;
+        grid-area: section-6;
+    }
+
+    .main-content__section-7 {
+        background: greenyellow;
+        color: whitesmoke;
+        grid-area: section-7;
+    }
+
+    .main-content__section-8 {
+        background: teal;
+        color: whitesmoke;
+        grid-area: section-8;
+    }
+    
+.main-footer {
+    grid-area: main-footer;
+    background: black;
+    color: white;
+    height: 3rem;
+    margin: 0 1rem;
+}
+
+@media ( max-width: 800px) {
+    body {
+        background: red;
+    }
+
+    .main-content {
+
+        grid-template-rows: minmax(540px, auto)  repeat(5, minmax(250px, auto));
+        grid-template-areas: 
+            "section-1 section-1 section-1"
+            "section-2 section-3 section-4"
+            "section-5 section-5 section-5"
+            "section-6 section-6 section-6"
+            "section-7 section-7 section-7"
+            "section-8 section-8 section-8"
+        ;
+
+    }
+
+}
+
+@media ( max-width: 640px) {
+    body {
+        background: blue;
+    }
+
+    .main-content {
+
+        grid-template-rows: minmax(540px, auto)  repeat(7, minmax(250px, auto));
+        grid-template-areas: 
+            "section-1 section-1 section-1"
+            "section-2 section-2 section-2"
+            "section-3 section-3 section-3"
+            "section-4 section-4 section-4"
+            "section-5 section-5 section-5"
+            "section-6 section-6 section-6"
+            "section-7 section-7 section-7"
+            "section-8 section-8 section-8"
+        ;
+
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: flex;;
+    }
+}

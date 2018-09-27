@@ -4,21 +4,24 @@ html {
 
 body {
     display: grid;
-
-    max-width: 960px;
     height: 100%;
+    padding: 1rem;
+
+    background: yellowgreen;
+
+    max-width: 320px;
     margin: 0 auto;
 
     grid-gap: 0.5rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 4rem 2rem auto auto 2rem;
 
     grid-template-areas: 
-        "header header header header header"
-        "topmenu topmenu topmenu topmenu topmenu"
-        "sidemenu content content content aside"
-        "sidemenu content content content aside"
-        "footer footer footer footer footer";
+        "header"
+        "topmenu"
+        "content"
+        "aside"
+        "footer";
 }
 
 .main-header {
@@ -34,6 +37,7 @@ body {
 }
 
 .side-nav {
+    display: none;
     background: green;
     color: whitesmoke;
     grid-area: sidemenu;
@@ -55,4 +59,48 @@ body {
     background: black;
     color: white;
     grid-area: footer;
+}
+
+
+@media ( min-width: 340px ) {
+    body {
+        background: plum;
+        max-width: 640px;
+
+        grid-gap: 0.5rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 4rem 2rem auto auto 2rem;
+
+        grid-template-areas: 
+        "header header"
+        "topmenu topmenu"
+        "content aside"
+        "sidemenu sidemenu"
+        "footer footer";
+    }
+
+    .side-nav {
+        display: block;
+    }
+
+
+}
+
+@media ( min-width: 960px ) {
+    body {
+       background: violet;
+       max-width: 960px;
+
+        grid-gap: 0.5rem;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 4rem 2rem auto auto 2rem;
+
+        grid-template-areas: 
+        "header header header"
+        "topmenu topmenu topmenu"
+        "sidemenu content aside"
+        "sidemenu content aside"
+        "footer footer footer";
+    }
+
 }
